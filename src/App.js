@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Dashboard from './components/dashboard/Chefs';
-import UserProfile from './components/dashboard/UserProfile';
-import ChefHistory from './components/dashboard/ChefHistory';
+import ChefBookings from './components/dashboard/ChefBookings';
+import CustomerProfile from './components/dashboard/CustomerProfile';
+import ChefProfile from './components/dashboard/ChefProfile';
+import BookingHistory from './components/dashboard/BookingHistory';
+import ChefBookingHistory from './components/dashboard/ChefBookingHistory';
 import Login from './components/login/LogIn';
 import Register from './components/login/Register';
 
@@ -21,8 +24,11 @@ function App() {
 					<div>
 						<Routes>	
 							<Route path="/" element={<Dashboard />} />
-							<Route path="/profile" element={<UserProfile />} />
-							<Route path="/chefhistory" element={<ChefHistory />} />
+							<Route path="/chef" element={<ChefBookings />} />
+							<Route path="/profile" element={<CustomerProfile />} />
+							<Route path="/chefprofile" element={<ChefProfile />} />
+							<Route path="/bookinghistory" element={<BookingHistory />} />
+							<Route path="/chefbookinghistory" element={<ChefBookingHistory />} />
 							<Route path="/login" element={<Login />} />
 							<Route path="/register" element={<Register />} />
 						</Routes>

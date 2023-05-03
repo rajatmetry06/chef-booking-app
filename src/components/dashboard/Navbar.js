@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar';
-import logo from './Logo.png'
+import logo from '../images/Logo.png'
 import { AiOutlineMenu } from "react-icons/ai";
 
 import TypingEffect from './TypingEffect';
@@ -15,19 +15,52 @@ function DispNavbar() {
 	}
 	const dashboardClick = () => {
 		setIsopen(false)
-		navigate("/")
+		switch (sessionStorage.getItem('userAccess')) {
+			case "Customer":
+				navigate("/")
+				break;
+			case "Chef":
+				navigate("/chef")
+				break;
+			default:
+				sessionStorage.setItem('userAuth', false)
+				navigate("/login")
+				break;
+		}
 	}
 	const profileClick = () => {
 		setIsopen(false)
-		navigate("/profile")
+		switch (sessionStorage.getItem('userAccess')) {
+			case "Customer":
+				navigate("/profile")
+				break;
+			case "Chef":
+				navigate("/chefprofile")
+				break;
+			default:
+				sessionStorage.setItem('userAuth', false)
+				navigate("/login")
+				break;
+		}
 	}
 	const historyClick = () => {
 		setIsopen(false)
-		navigate("/chefhistory")
+		switch (sessionStorage.getItem('userAccess')) {
+			case "Customer":
+				navigate("/bookinghistory")
+				break;
+			case "Chef":
+				navigate("/chefbookinghistory")
+				break;
+			default:
+				sessionStorage.setItem('userAuth', false)
+				navigate("/login")
+				break;
+		}
 	}
 	const signoutClick = () => {
 		setIsopen(false)
-		// sessionStorage.setItem('authantication', false)
+		sessionStorage.setItem('userAuth', false)
 		navigate("/login")
 	}
 	return (
