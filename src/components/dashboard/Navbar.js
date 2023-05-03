@@ -17,7 +17,7 @@ function DispNavbar() {
 		setIsopen(false)
 		switch (sessionStorage.getItem('userAccess')) {
 			case "Customer":
-				navigate("/")
+				navigate("/customerprofile")
 				break;
 			case "Chef":
 				navigate("/chef")

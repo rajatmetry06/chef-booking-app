@@ -8,6 +8,7 @@ import BookingHistory from './components/dashboard/BookingHistory';
 import ChefBookingHistory from './components/dashboard/ChefBookingHistory';
 import Login from './components/login/LogIn';
 import Register from './components/login/Register';
+import LoginCheck from './components/dashboard/LoginCheck'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,8 +23,9 @@ function App() {
 					minHeight: "100vh", maxHeight: "100vh"
 				}}>
 					<div>
-						<Routes>	
-							<Route path="/" element={<Dashboard />} />
+						<Routes>
+							<Route path="/" element={<LoginCheck />} />
+							<Route path="/customerprofile" element={<Dashboard />} />
 							<Route path="/chef" element={<ChefBookings />} />
 							<Route path="/profile" element={<CustomerProfile />} />
 							<Route path="/chefprofile" element={<ChefProfile />} />

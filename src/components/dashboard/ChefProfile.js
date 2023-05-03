@@ -160,7 +160,6 @@ const ChefProfile = () => {
 									<th>SR. NO</th>
 									<th>START DATE</th>
 									<th>END DATE</th>
-									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -169,9 +168,6 @@ const ChefProfile = () => {
 										<td>{i + 1}</td>
 										<td>{item.start}</td>
 										<td>{item.end}</td>
-										<td>
-											<Button className={'btn btn-sm btn-danger'} disabled={true}>DELETE</Button>
-										</td>
 									</tr>
 								))}
 							</tbody>

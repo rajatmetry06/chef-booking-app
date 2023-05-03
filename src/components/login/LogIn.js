@@ -50,7 +50,7 @@ const Login = () => {
 								sessionStorage.setItem('userLastName', data[0].lastname)
 								sessionStorage.setItem('userEmail', formData.email)
 								sessionStorage.setItem('userPassword', formData.password)
-								navigate("/")
+								navigate("/customerprofile")
 								break;
 							case "Chef":
 								sessionStorage.setItem('userAuth', true)
